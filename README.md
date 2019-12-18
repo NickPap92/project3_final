@@ -1,4 +1,4 @@
-# Architecture Lab, Project 2
+# Architecture Lab, Project 3
 
 ## Detailed Report
 
@@ -9,3 +9,4 @@
 ### 1.
 
 &nbsp;
+
