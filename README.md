@@ -96,3 +96,6 @@ Therefore, if our CPU is running on a fixed voltage and frequency, **C** remains
 ### 2.
 
 &nbsp;
+In order to determine which CPU is more energy efficient, we need to examine different cases of the problem.
+
+- Case 1: 
