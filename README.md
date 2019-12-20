@@ -9,8 +9,7 @@
 ### 1.
 
 &nbsp;
-
-Modern processors are built over complementary metal-oxide semiconductor (CMOS) technology. The main power consumption in CMOS circuits comprises two forms of power, dynamic power consumption (Pdynamic) and static power consumption (Pstatic). The static power consumption, also known as idle power or leakage, is the dominant source of power consumption in circuits, persisting whether a computer is active or idle. Leakage power consumption is caused by parasitic current that flows through transistors, due to their construction, even when the transistor is switched off. In addition to consuming static power, computer components also consume dynamic power due to circuit activity such as the changes of inputs in an adder or values in a register. 
+Modern processors are built over complementary metal-oxide semiconductor (CMOS) technology. The main power consumption in CMOS circuits comprises two forms of power, dynamic power consumption (Pdynamic) and static power consumption (Pstatic). **The static power consumption, also known as idle power or leakage, is the dominant source of power consumption in circuits, persisting whether a computer is active or idle**. Leakage power consumption is caused by parasitic current that flows through transistors, due to their construction, even when the transistor is switched off. In addition to consuming static power, computer components also consume dynamic power due to circuit activity such as the changes of inputs in an adder or values in a register. 
 
 &nbsp;
 Total power can be determined by this equation:
@@ -40,6 +39,9 @@ Assuming **Pidle** is close to zero and **u** is 100% for the first 24hrs:
 
 &nbsp;
 
+&nbsp;
+[Dynamic Power Consumption](https://www.sciencedirect.com/topics/computer-science/dynamic-power-consumption)
+
 Let's see how different programs affect **Dynamic power** and **Static power(Leakage)**.
 
 **Dynamic power** is affected by **a**, **C**, **V** and **f**. 
@@ -60,3 +62,15 @@ The closer a program's CPI to 1.0 is, the more instructions per clock it execute
     Capacitance load is the amount of capacitance measured or computed across the crystal terminals on the PCB. 
 
     Every mos transistor as a switch in the circuit has an input CGS capacitance and a an on-resistance. So, if we build a circuit using this transistor it will react on the abrupt input voltage changes by a slowing the change of the output voltage from the high to low and from the low to high. Which means that the output voltage will not change instantly but will take time to charge and discharge the output load capacitor. Increasing the input pulse rate by increasing its frequency will lead to shrink the steady state time of the pulses which will ultimately be zero and the output waveform will appear triangular. This will be the maximum input possible bit rate.
+
+Therefore, if our CPU is running on a fixed voltage and frequency, **CC** remains static. In the case of dynamic frequency, capacitane load will slowly change according to alterations in frequency, which depend on temperature, power and current limits.
+
+[What is load capacitance](https://www.quora.com/What-is-load-capacitance)
+
+[Pierce oscillator](https://en.wikipedia.org/wiki/Pierce_oscillator#Load_capacitance)
+
+[Load Capacitance](https://www.sciencedirect.com/topics/engineering/load-capacitance)
+
+[Resonance](https://en.wikipedia.org/wiki/Resonance)
+
+[Do frequency changes affect on load capacitance of VLSI circuits](https://www.researchgate.net/post/Do_frequency_changes_affect_on_load_capacitance_of_VLSI_circuits)
