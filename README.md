@@ -29,13 +29,9 @@ There is a strong relationship between the CPU utilization and total power consu
 
 #### P(u) = Pidle+(Pbusy − Pidle)×u
 
-where **P** is the estimated power consumption, **Pidle** is the power consumption by an idle server, **Pbusy** is the power consumed by the server when it is fully utilized, and **u** is the current CPU utilization. 
+where **P** is the estimated power consumption, **Pidle** is the power consumption at idle, **Pbusy** is the power consumed by the server when it is fully utilized, and **u** is the current CPU utilization. 
 
-By this we can see that there is a direct relationship between time needed to execute a program and power consumption. If we assume that a program is set to run as soon as the system fires up, and that program is taking a considerable amount of time to run (for instance Prime95 small ftt 24hr stress test run), we can calculate the total power consumption as:
-
-&nbsp;
-Assuming **Pidle** is close to zero and **u** is 100% for the first 24hrs:
-#### P(u) = (Pbusy) = P(uMax)
+By this we can see that there is a direct relationship between time needed to execute a program and power consumption. Given that **Pidle** is static, the higher the **Pbusy** is, the higher the total power consumption.
 
 &nbsp;
 
@@ -44,6 +40,7 @@ Assuming **Pidle** is close to zero and **u** is 100% for the first 24hrs:
 
 Let's see how different programs affect **Dynamic power** and **Static power(Leakage)**.
 
+&nbsp;
 **Dynamic power** is affected by **a**, **C**, **V** and **f**. 
 
 - Switching activity factor [**a**]
@@ -59,11 +56,11 @@ The closer a program's CPI to 1.0 is, the more instructions per clock it execute
 
 - Capacitance load [**C**]
 
-    Capacitance load is the amount of capacitance measured or computed across the crystal terminals on the PCB. 
+    It is the amount of capacitance measured or computed across the crystal terminals on the PCB. 
 
     Every mos transistor as a switch in the circuit has an input CGS capacitance and a an on-resistance. So, if we build a circuit using this transistor it will react on the abrupt input voltage changes by a slowing the change of the output voltage from the high to low and from the low to high. Which means that the output voltage will not change instantly but will take time to charge and discharge the output load capacitor. Increasing the input pulse rate by increasing its frequency will lead to shrink the steady state time of the pulses which will ultimately be zero and the output waveform will appear triangular. This will be the maximum input possible bit rate.
 
-Therefore, if our CPU is running on a fixed voltage and frequency, **CC** remains static. In the case of dynamic frequency, capacitane load will slowly change according to alterations in frequency, which depend on temperature, power and current limits.
+Therefore, if our CPU is running on a fixed voltage and frequency, **C** remains static. In the case of dynamic frequency, capacitane load will slowly change according to alterations in frequency, which depend on temperature, power and current limits.
 
 [What is load capacitance](https://www.quora.com/What-is-load-capacitance)
 
@@ -74,3 +71,28 @@ Therefore, if our CPU is running on a fixed voltage and frequency, **CC** remain
 [Resonance](https://en.wikipedia.org/wiki/Resonance)
 
 [Do frequency changes affect on load capacitance of VLSI circuits](https://www.researchgate.net/post/Do_frequency_changes_affect_on_load_capacitance_of_VLSI_circuits)
+
+&nbsp;
+
+- Supply voltage [**V**]
+
+    The voltage supplied to the CPU. Can be fixed or dynamic. Greatly affects Dynamic power as we calculate the **V^2** value.
+
+&nbsp;
+
+- CPU frequency [**f**]
+
+    The frequency the CPU is running at. Can be fixed or dynamic.
+
+&nbsp;
+**Static power(Leakage)** is present whether the computer is active or idle. It is due to leakage current and depends primarily on the manufacturing process and technology with which the transistors are made. It does not depend on the frequency of operation of the flip-flops.
+
+[Static power](https://www.sciencedirect.com/topics/computer-science/static-power)
+
+&nbsp;
+
+&nbsp;
+
+### 2.
+
+&nbsp;
