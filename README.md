@@ -47,4 +47,16 @@ Let's see how different programs affect **Dynamic power** and **Static power(Lea
 - Switching activity factor [**a**]
 
     It depends on both the logic function being performed and the statistical properties of
-    the primary inputs. the expected value of the number of gate output transitions per global clock cycle or equivalently the average number of gate output transitions per clock cycle.
+    the primary inputs. It is defined as the expected value of the number of gate output transitions per global clock cycle     or equivalently the average number of gate output transitions per clock cycle.
+
+The closer a program's CPI to 1.0 is, the more instructions per clock it executes, the more gate output transitions happen and therefore **a** increases.
+
+[Estimation of average switching activity](https://www.researchgate.net/publication/220400097_Estimation_of_average_switching_activity_in_combinational_logic_circuits_using_symbolic_simulation)
+
+&nbsp;
+
+- Capacitance load [**C**]
+
+    Capacitance load is the amount of capacitance measured or computed across the crystal terminals on the PCB. 
+
+    Every mos transistor as a switch in the circuit has an input CGS capacitance and a an on-resistance. So, if we build a circuit using this transistor it will react on the abrupt input voltage changes by a slowing the change of the output voltage from the high to low and from the low to high. Which means that the output voltage will not change instantly but will take time to charge and discharge the output load capacitor. Increasing the input pulse rate by increasing its frequency will lead to shrink the steady state time of the pulses which will ultimately be zero and the output waveform will appear triangular. This will be the maximum input possible bit rate.
