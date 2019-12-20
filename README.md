@@ -39,8 +39,12 @@ Assuming **Pidle** is close to zero and **u** is 100% for the first 24hrs:
 #### P(u) = (Pbusy) = P(uMax)
 
 &nbsp;
+
 Let's see how different programs affect **Dynamic power** and **Static power(Leakage)**.
 
 **Dynamic power** is affected by **a**, **C**, **V** and **f**. 
 
 - Switching activity factor [**a**]
+
+    It depends on both the logic function being performed and the statistical properties of
+    the primary inputs. the expected value of the number of gate output transitions per global clock cycle or equivalently the average number of gate output transitions per clock cycle.
