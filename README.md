@@ -96,10 +96,10 @@ Therefore, if our CPU is running on a fixed voltage and frequency, **C** remains
 ### 2.
 
 &nbsp;
-In order to determine which CPU is more energy efficient, we need to examine different cases of the problem. We will assume that the processors are not entirely idling, as this would make it obvious the 5W CPU is more efficient. An imaginary benchmark will run on both processors.
+In order to determine which CPU is more energy efficient, we need to examine different cases of the problem. We will assume that the processors are not entirely in an idle state, as this would make it obvious the 5W CPU is more efficient. We also assume that the processors are running a certain workload, as in video decoding or 3D render.
 
-- Case 1: System starts up, benchmark is executed, task is finished and CPU idles until battery drains out.
+- Case 1: System starts up, workload is executed, task is finished and CPU idles until battery drains out.
 
-- Case 2: System starts up, benchmark is executed, task is finished and system shuts down.
+- Case 2: System starts up, workload is executed, task is finished and system shuts down.
 
-- Case 3: Battery drains out before benchmark is completed.
+- Case 3: Battery drains out before workload is completed.
