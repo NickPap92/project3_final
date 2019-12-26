@@ -96,10 +96,28 @@ Therefore, if our CPU is running on a fixed voltage and frequency, **C** remains
 ### 2.
 
 &nbsp;
-In order to determine which CPU is more energy efficient, we need to examine different cases of the problem. We will assume that the processors are not entirely in an idle state, as this would make it obvious the 5W CPU is more efficient. We also assume that the processors are running a certain workload, as in video decoding or 3D render.
+In order to determine which CPU is more energy efficient, we need to examine different cases of the problem. We will assume that the processors are not entirely in an idle state, as this would make it obvious the 5W CPU is more efficient. We also assume that the processors are running a certain workload, as in video decoding or 3D rendering.
 
 - Case 1: System starts up, workload is executed, task is finished and CPU idles until battery drains out.
 
 - Case 2: System starts up, workload is executed, task is finished and system shuts down.
 
 - Case 3: Battery drains out before workload is completed.
+
+&nbsp;
+
+Let's take the example of a Penryn CPU built on 45nm node. This one has a runtime dynamic o 36.1433W, which is close to the theoretical 40W CPU we are examining. Runtime consumption refers to the consumption while the CPU is executing machine code.
+
+Our competitor will be an ARM\_A9\_2GHz\_withIOC, built on 40nm node which is slightly more refined than the Penryn and thus having a slight edge on the power consumption on top of being a low power budget component. The runtime dynamic of this CPU is 5.57062W.
+
+Both CPUs will have a statik leakage being idle or not. The ARM processor has a subthreshold leakage of 0.0559042W, whereas Penryn's is 8.67012W. Penryn is built on an architecture that can take advantage of power gating, leading to 4.25769W of subthreshold leakage with power gating. This technology makes it possible for the CPU to completely block all current passing through a gate when it's closed, when normally even if a gate is closed it is run by some current and that helps with power consumption. 
+
+Given that Penryn is on a high power budget envelope, it incorporates way more instructions per cycle. As we saw, higher IPC ( or lower CPI ) has a detrimental effect on the duration of a code execution.
+
+With these in mind let's examine all 3 of the cases.
+
+&nbsp;
+
+#### Case 1
+
+
