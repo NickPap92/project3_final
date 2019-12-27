@@ -120,4 +120,16 @@ With these in mind let's examine all 3 of the cases.
 
 #### Case 1
 
+If the executed code takes a considerable longer amount of time to be executed, it means that after it is done executing on the Penryn, the CPU will idle and consume 4.25769W in the subthreshold leakage with power gating stage, whereas on the ARM it might still be executing the code consuming 5.57062W. This can give an edge on the Penryn CPU as it will be consuming less wattage than a still-executing 5W ARM CPU.
 
+&nbsp;
+
+#### Case 2
+
+In this case, similarly to the first one, Penryn will finish executing the code and system powers off, saving battery life by not consuming any leakage power which is a substantial amount.
+
+&nbsp;
+
+#### Case 3
+
+In this case battery efficiency does not really matter as none of the CPUs achieved desired goal.
