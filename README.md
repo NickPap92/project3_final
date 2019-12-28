@@ -133,3 +133,9 @@ In this case, similarly to the first one, Penryn will finish executing the code 
 #### Case 3
 
 In this case battery efficiency does not really matter as none of the CPUs achieved desired goal.
+
+&nbsp;
+
+&nbsp;
+
+By running commands like "./mcpat \-infile ProcessorDescriptionFiles/Xeon.xml \-print\_level 1", 
