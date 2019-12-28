@@ -156,4 +156,36 @@ Sources:
 ### 3.
 
 &nbsp;
+As we explained, leakage consumption is present no matter what, given that a system is powered on. By examining the mcpat results of the Xeon and ARM\_A9\_2GHz CPUs we gather these values regarding static power consumption:
 
+- Xeon
+> Runtime Dynamic = 72.9199 W
+> Subthreshold Leakage with power gating = 16.3977 W (Best case scenario of the idle Xeon using power gating to save power)
+
+- ARM
+> Runtime Dynamic = 2.96053 W
+> Subthreshold Leakage = 0.0523094 W
+
+If the Xeon can execute this certain workload 40 times faster than the ARM, we can also make another assumption that the execution of this code on the Xeon is instant, which means that the Xeon consumes:
+
+Ptotal(Xeon) = 72.9199 + Pstatic = 72.9199 + 16.3977\*t , where t is the time the system remains powered on after it is done executing the code
+
+For the ARM processor, given that it's 40 times slower it will have a consumption of:
+
+Ptotal(ARM) = 2.96053\*40 + 0.0523094\*t . 
+
+If the system would shut down after the execution, Xeon would consume 72.9199 W, and ARM would consume 2.96053\*40 = 118.4212 W
+
+In this scenario, we are not shutting down the system after the execution, so the power consumption of the Xeon will greatly keep on rising compared to the ARM CPU ( 16.3977\*t versus 0.0523094\*t ) and so the Xeon CPU can never be more power efficient than the ARM.
+
+&nbsp;
+
+&nbsp;
+
+## Step 2. 
+
+&nbsp;
+
+### 1.
+
+&nbsp;
