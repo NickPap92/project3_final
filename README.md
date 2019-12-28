@@ -138,4 +138,22 @@ In this case battery efficiency does not really matter as none of the CPUs achie
 
 &nbsp;
 
-By running commands like "./mcpat \-infile ProcessorDescriptionFiles/Xeon.xml \-print\_level 1", 
+By running commands like "./mcpat \-infile ProcessorDescriptionFiles/Xeon.xml \-print\_level 5", Mcpat can give us details about total leakage, runtime dynamic, peak power consumption as well as consumption about individual components of the CPU such as L1 and L2. This is a short benchmark of the CPU but we would also need to know the duration of it, the CPU percent load and the instruction sets used to determine the power efficiency of the CPU.
+
+Sources:
+
+[Runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))
+
+[Is the ARM processor more energy efficient than Intel?](https://www.researchgate.net/post/Why_is_the_ARM_processor_more_energy_efficient_than_Intel)
+
+[Does a x86 CPU run faster than an ARM equivalent counterpart?](https://www.quora.com/Given-the-same-clock-frequency-does-a-x86-CPU-run-faster-than-an-ARM-equivalent-counterpart)
+
+[CPU utilization & power consumption](https://www.quora.com/Does-a-weak-CPU-on-100-or-a-strong-CPU-on-50-consume-more-electricity)
+
+&nbsp;
+
+&nbsp;
+### 3.
+
+&nbsp;
+
